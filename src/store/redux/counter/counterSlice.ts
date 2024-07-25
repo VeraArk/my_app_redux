@@ -3,7 +3,7 @@ import { PayloadAction } from "@reduxjs/toolkit"
 
 import { CounterSliceState } from "./types"
 
-// Прописываем значения по умолчания для count, чтобы потом передать в Global State в reudux store
+// Прописываем значения по умолчания для count, чтобы потом передать в Global State в redux store
 const counterInitialState: CounterSliceState = {
   count: 0,
 }
