@@ -1,38 +1,31 @@
 import { createAppSlice } from "store/createAppSlice"
 
-import { LikeSliceState, DislikeSliceState } from "./types"
+import { FeedbackState } from "./types"
 
-interface FeedbackState {
-  like: LikeSliceState
-  dislike: DislikeSliceState
-}
 
-const initialState: FeedbackState = {
-  like: { like: 0 },
-  dislike: { dislike: 0 },
-}
+const initialState: FeedbackState = { like: 0, dislike: 0, }
 
 export const feedbackSlice = createAppSlice({
   name: "FEEDBACK",
   initialState,
   reducers: create => ({
     plusLike: create.reducer(state => {
-      state.like.like = state.like.like + 1
+      state.like = state.like + 1
     }),
     plusDislike: create.reducer(state => {
-      state.dislike.dislike = state.dislike.dislike + 1
+      state.dislike = state.dislike + 1
     }),
     resetResults: create.reducer(state => {
-      state.dislike.dislike = 0
-      state.like.like = 0
+      state.dislike = 0
+      state.like = 0
     }),
   }),
   selectors: {
     like: (state: FeedbackState) => {
-      return state.like.like
+      return state.like
     },
     dislike: (state: FeedbackState) => {
-      return state.dislike.dislike
+      return state.dislike
     },
   },
 })

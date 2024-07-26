@@ -1,7 +1,4 @@
-export interface LikeSliceState {
+export interface FeedbackState {
   like: number
-}
-
-export interface DislikeSliceState {
   dislike: number
 }
