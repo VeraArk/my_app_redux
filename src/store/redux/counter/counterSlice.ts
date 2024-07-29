@@ -17,7 +17,7 @@ export const counterSlice = createAppSlice({
   // reducers: (create) => {
   //     return {}
   // }
-  // reducers - функции, изменяющие состояние counterSlice
+  // reducers - функции, изменяющие состояние counterSlice, возвращает объект, где свойствами ключей являются функции
   reducers: create => ({
     plus: create.reducer((state: CounterSliceState) => {
       state.count = state.count + 1

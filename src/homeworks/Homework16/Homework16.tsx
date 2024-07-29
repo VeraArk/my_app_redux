@@ -14,6 +14,7 @@ function Homework16() {
   const dislike = useAppSelector(feedbackSliceSelectors.dislike)
 
   const onLike = () => {
+    // метод plusLike - это ActionCreator - метод, который создает action
     dispatch(feedbackSliceActions.plusLike())
   }
 
