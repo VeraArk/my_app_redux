@@ -1,10 +1,9 @@
-export interface CatFacts{
-    id: string,
-    fact: string
+export interface CatFact {
+  id: string
+  fact: string
 }
 
-
 export interface CatFactSliceState {
-  catFacts: []
+  catFacts: CatFact[]
   error: string | undefined
 }
