@@ -8,11 +8,12 @@ export const PageWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap:30px;
   padding: 100px;
   background-color: ${colors.PRIMARY};
 `
 
-export const CatFactCard = styled.div`
+export const JokeCard = styled.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -26,23 +27,32 @@ export const CatFactCard = styled.div`
   overflow-y: auto;
 `
 
-export const CatFactsContainer = styled.div`
+export const JokeContainer = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
   gap: 30px;
 `
-
-export const CatFactText = styled.p`
+export const JokeText = styled.div`
+display: flex;
+flex-direction:column;
+`
+export const SetupText = styled.p`
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 500;
 `
 
-export const CatFactWrapper = styled.div`
+export const PunchlineText = styled.p`
+  font-weight: 700;
+  font-size: 27px;
+`
+export const JokeWrapper = styled.div`
   display: flex;
   gap: 10px;
+  justify-content: space-between;
 `
 
 export const ButtonControl = styled.div`
   min-width: 100px;
+  height: 70px;
 `

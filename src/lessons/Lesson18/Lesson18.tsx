@@ -6,7 +6,7 @@ import {
   catFactSelectors,
   catFactsActions,
 } from "store/redux/catFact/catFactSlice"
-import { CatFacts } from "store/redux/catFact/types"
+import { CatFact } from "store/redux/catFact/types"
 
 import Button from "components/Button/Button"
 
@@ -15,6 +15,8 @@ import {
   CatFactCard,
   CatFactsContainer,
   CatFactText,
+  CatFactWrapper,
+  ButtonControl,
 } from "./styles"
 
 function Lesson_18() {
@@ -22,11 +24,30 @@ function Lesson_18() {
   const catFacts = useAppSelector(catFactSelectors.catFacts)
   const error = useAppSelector(catFactSelectors.error)
 
-  const getCatFact = () => {}
+  const getCatFact = () => {
+    dispatch(catFactsActions.getCatFact("Some fake data"))
+  }
 
-  const catFactsParagraphs = catFacts.map((catFact: CatFacts) => {
-    return <CatFactText key={v4()}>{catFact.fact}</CatFactText>
+  const catFactsParagraphs = catFacts.map((catFact: CatFact, index: number) => {
+    return (
+      <CatFactWrapper key={v4()}>
+        <CatFactText>
+          {`${index + 1}.`}
+          {catFact.fact}
+        </CatFactText>
+        <ButtonControl>
+          <Button
+            isRed
+            name="Delete"
+            onClick={() => {
+              dispatch(catFactsActions.deleteCatFact(catFact.id))
+            }}
+          />
+        </ButtonControl>
+      </CatFactWrapper>
+    )
   })
+
   useEffect(() => {
     if (error) {
       alert(error)
